@@ -12,9 +12,17 @@ tde-programacao-concorrente
 
 # \## Integrantes
 
+Mateus de Brito Gomes 
+
+Júlio Cesar Stein 
+
+Thiago Oliveira 
+
 # 
 
 # \## Linguagem
+
+Python 3.11
 
 # 
 
@@ -50,7 +58,7 @@ No jantar dos filosofos(N = 5) na versao ingenua cada filosofo executa o seguint
 
 
 
-Analise dos reesultados e comportamento do (Scheduler) que e o agendamento 
+Analise dos reesultados e comportamento do (Scheduler) que e o agendamento
 
 
 
@@ -78,9 +86,9 @@ Ao chamar time.sleep(0.5), logo apos o primeiro garfo, a thread desiste voluntar
 
 
 
-Para resolver o problema de deadlock observado na versao ingenua, o algoritmo foi modificado aplicando hirerarquia de recursos.Essa estrageria consiste em impor uma ordenacao global e estrita  sobre a aquisicao dos recurso compartilhados que sao os garfos. 
+Para resolver o problema de deadlock observado na versao ingenua, o algoritmo foi modificado aplicando hirerarquia de recursos.Essa estrageria consiste em impor uma ordenacao global e estrita  sobre a aquisicao dos recurso compartilhados que sao os garfos.
 
-No modelo corrigido  
+No modelo corrigido
 
 1\. cada garfo possui um indice numero fixo que vvai de 0 ate N -1.
 
@@ -98,7 +106,7 @@ Para que ocorra um \*deadlock\* a  \*\*coexistencia simultanea das quatro condic
 
 
 
-O metodos utilizado(hirerarquia de recursos) atua diretamente sobre a \*\*espera circular\*\* . Ao impor uma ordem globa  de menor e maior ,torna-se matematiamente impossivel a formacao de um ciclo fechado de espera entre os filosofos. O sistema ganha progresso continuo e as \*\*threads\*\* podem sofrer breves espera por conter recursos, mas o travamento sistemico (deadlock) nao ocorre,cono foi mostrados os prints da execucao do vscode. 
+O metodos utilizado(hirerarquia de recursos) atua diretamente sobre a \*\*espera circular\*\* . Ao impor uma ordem globa  de menor e maior ,torna-se matematiamente impossivel a formacao de um ciclo fechado de espera entre os filosofos. O sistema ganha progresso continuo e as \*\*threads\*\* podem sofrer breves espera por conter recursos, mas o travamento sistemico (deadlock) nao ocorre,cono foi mostrados os prints da execucao do vscode.
 
 
 
@@ -202,7 +210,7 @@ filosofo(id)
 
 &#x20;   inicia thread t
 
-&#x20;fim para   
+&#x20;fim para
 
 
 
@@ -304,7 +312,7 @@ para i de 0 ate N -1 faca:
 
 &#x20;   iniciar thread t
 
-fim para    
+fim para
 
 # 
 

@@ -4,7 +4,9 @@ tde-programacao-concorrente
 
 ===
 
-# 
+https://github.com/Debirot/tde-programacao-concorrente/tree/main
+
+
 
 # Vídeo: (link do YouTube)
 
@@ -23,10 +25,6 @@ Thiago Oliveira
 # \## Linguagem
 
 Python 3.11
-
-# 
-
-# \## Como compilar e executar
 
 # 
 
@@ -73,10 +71,6 @@ De inicio o sistema ocorreu sem trava aparente,porque o escalonamnto nativo do S
 Ao chamar time.sleep(0.5), logo apos o primeiro garfo, a thread desiste voluntariamente da CPU e entra em estado de espera. Isso forca o escalonador do SO a alternar o processamento para as demais threads sem que estejam na sequenica, criando uma janela temporal necessssaria para que o agendador de oportunidade a todas as threads de xecutarem,pegar os garfos esquerdos e ficarem no mesmo estado vulneravel q e com o garfo na mao antes de tentar pegar o proximo;
 
 \-DEADLOCK: Com todos os garfos esquerdos ocupados,cada filosofo tenta pegar o direito porem esta ocupado pelo vizinho. Como a thread nao libera o recurso  ,elas ficam blloqueado e aguardando alguem liberaar,gerar espera circular. O programa para o progresso pois as threads ficam bloquedas,gerando DEADLOCK classico verificado nos logs de execucao, mesmo com o SO e os outros aplicativos funcionaando normalmente.
-
-
-
-
 
 
 
@@ -389,4 +383,90 @@ O acquire() e o release() funcionam como barreiras o que uma thread gravou antes
 
 
 # \## Parte 3 - Deadlock
+
+
+
+\### Como executar
+
+
+
+cd parte3-deadlock
+
+python deadlock.py
+
+python deadlock\_corrigido.py
+
+
+
+
+
+\### Cenário
+
+
+
+Duas threads e dois locks (A e B):
+
+
+
+\- Thread 1 pega o LOCK\_A e depois o LOCK\_B
+
+\- Thread 2 pega o LOCK\_B e depois o LOCK\_A
+
+
+
+O time.sleep(0.05) entre as duas aquisições dá tempo para cada thread pegar o seu primeiro lock antes de pedir o segundo. Assim o deadlock acontece em toda execução.
+
+
+
+\### Condições de Coffman
+
+
+
+\- Exclusão mútua: cada lock só pode ficar com uma thread por vez.
+
+\- Manter e esperar: a Thread 1 segura o A e espera o B; a Thread 2 segura o B e espera o A.
+
+\- Não preempção: nenhuma thread tira o lock da outra; só quem pegou pode liberar.
+
+\- Espera circular: a Thread 1 espera a Thread 2, e a Thread 2 espera a Thread 1.
+
+
+
+As quatro aconteceram ao mesmo tempo, por isso houve deadlock.
+
+
+
+\### Correção
+
+
+
+Ordem global de aquisição: todas as threads pegam o LOCK\_A antes do LOCK\_B. A única mudança foi na Thread 2:
+
+
+
+python
+
+def thread\_2():
+
+&#x20;   LOCK\_A.acquire()
+
+&#x20;   print("Thread 2 pegou o LOCK\_A")
+
+&#x20;   time.sleep(0.05)
+
+&#x20;   print("Thread 2 esperando o LOCK\_B")
+
+&#x20;   LOCK\_B.acquire()
+
+&#x20;   print("Thread 2 concluiu")
+
+&#x20;   LOCK\_B.release()
+
+&#x20;   LOCK\_A.release()
+
+
+
+
+
+Isso quebra a espera circular. Se o LOCK\_A está com a Thread 1, a Thread 2 espera sem segurar nenhum lock, então a Thread 1 consegue pegar o LOCK\_B, terminar e liberar os dois. As outras três condições continuam existindo, mas basta quebrar uma para o deadlock não acontecer.
 

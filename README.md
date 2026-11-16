@@ -1,6 +1,6 @@
-tde-programacao-concorrente
 
-# TDE - Programação Concorrente
+
+# TDE - Programação Concorrente - GRUPO 1 TDE2 
 
 ===
 
@@ -29,6 +29,14 @@ Python 3.11
 # 
 
 # \## Parte 1 - Jantar dos Filósofos
+
+
+
+!\[versao ingenua com deadlock](parte1-filosofos/evidencias/ingenua/deadlock.png)
+
+!\[versao corrigida](parte1-filosofos/evidencias/corrigida/versaacorrigidaa.png)
+
+
 
 Cenario 1 - Versaso ingenua e Ocorrencia de deadlock
 
@@ -312,6 +320,18 @@ fim para
 
 # \## Parte 2 - Threads e semáforos
 
+!\[sem semaforo 1](parte2-semaforo/prints/sem\_semaforo\_1.png)
+
+!\[sem semaforo 2](parte2-semaforo/prints/sem\_semaforo\_2.png)
+
+!\[sem semaforo 3](parte2-semaforo/prints/sem\_semaforo\_3.png)
+
+!\[com semaforo 1](parte2-semaforo/prints/com\_semaforo\_1.png)
+
+!\[com semaforo 2](parte2-semaforo/prints/com\_semaforo\_2.png)
+
+!\[com semaforo 3](parte2-semaforo/prints/com\_semaforo\_3.png)
+
 
 
 Como executar:
@@ -383,6 +403,12 @@ O acquire() e o release() funcionam como barreiras o que uma thread gravou antes
 
 
 # \## Parte 3 - Deadlock
+
+
+
+!\[deadlock](parte3-deadlock/prints/deadlock\_print.jpeg)
+
+!\[sem deadlock](parte3-deadlock/prints/sem\_deadlock\_print.jpeg)
 
 
 

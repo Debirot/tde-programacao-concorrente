@@ -322,18 +322,12 @@ fim para
 
 # \## Parte 2 - Threads e semáforos
 
-!\[sem semaforo 1](parte2-semaforo/prints/sem\_semaforo\_1.png)
-
-!\[sem semaforo 2](parte2-semaforo/prints/sem\_semaforo\_2.png)
-
-!\[sem semaforo 3](parte2-semaforo/prints/sem\_semaforo\_3.png)
-
-!\[com semaforo 1](parte2-semaforo/prints/com\_semaforo\_1.png)
-
-!\[com semaforo 2](parte2-semaforo/prints/com\_semaforo\_2.png)
-
-!\[com semaforo 3](parte2-semaforo/prints/com\_semaforo\_3.png)
-
+<img width="737" height="60" alt="image" src="https://github.com/user-attachments/assets/1fc4a469-3525-4aa6-95a6-12c85c526ca6" />
+<img width="766" height="67" alt="image" src="https://github.com/user-attachments/assets/64ed36b6-7982-4615-9d65-9e9cf48d316f" />
+<img width="450" height="67" alt="image" src="https://github.com/user-attachments/assets/5577360e-603e-4c8c-b848-dd1e6f699d7a" />
+<img width="794" height="61" alt="image" src="https://github.com/user-attachments/assets/80171242-6253-47fc-9fcb-4f93be48c31d" />
+<img width="795" height="67" alt="image" src="https://github.com/user-attachments/assets/8989a154-282f-420a-a1ec-4c6cf077d528" />
+<img width="638" height="61" alt="image" src="https://github.com/user-attachments/assets/9bf4df04-81d6-42d6-a574-b50f29be4646" />
 
 
 Como executar:

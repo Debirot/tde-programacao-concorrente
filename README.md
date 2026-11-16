@@ -405,10 +405,10 @@ O acquire() e o release() funcionam como barreiras o que uma thread gravou antes
 # \## Parte 3 - Deadlock
 
 
+<img width="1600" height="324" alt="deadlock_print" src="https://github.com/user-attachments/assets/3075ca80-e9d0-416e-b013-8ef0ff6bb188" />
 
-!\[deadlock](parte3-deadlock/prints/deadlock\_print.jpeg)
+<img width="1600" height="328" alt="sem_deadlock_print" src="https://github.com/user-attachments/assets/1ad89901-0e1f-483d-a47f-160280a4cb40" />
 
-!\[sem deadlock](parte3-deadlock/prints/sem\_deadlock\_print.jpeg)
 
 
 

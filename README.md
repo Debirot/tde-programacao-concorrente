@@ -12,11 +12,11 @@ tde-programacao-concorrente
 
 # \## Integrantes
 
-Mateus de Brito Gomes 
+Mateus de Brito Gomes
 
-Júlio Cesar Stein 
+Júlio Cesar Stein
 
-Thiago Oliveira 
+Thiago Oliveira
 
 # 
 
@@ -318,7 +318,75 @@ fim para
 
 # \## Parte 2 - Threads e semáforos
 
-# 
+
+
+Como executar:
+
+
+
+cd parte2-semaforo
+
+python contador\_sem\_semaforo.py
+
+python contador\_com\_semaforo.py
+
+
+
+Funcionamento:
+
+8 threads incrementam um contador compartilhado 200,000 vezes cada. O valor esperado é 8 × 200,000 = 1,600,000.
+
+
+
+Sem semáforo: as threads leem e gravam o contador ao mesmo tempo e o resultado sai errado.
+
+Com semáforo: threading.Semaphore(1) deixa só uma thread por vez mexer no contador e o resultado sai certo.
+
+
+
+O for j in range(10): pass entre a leitura e a escrita existe por causa do GIL do Python. Sem ele, a troca de thread quase nunca acontece no meio do incremento e a corrida não aparece.
+
+
+
+Resultados
+
+Versão	     Tentativa	Esperado	Obtido	Tempo (segundos)
+
+Sem semáforo	1	1600000	        865337	 0.469
+
+Sem semáforo	2	1600000	        1101351	 0.255
+
+Sem semáforo	3	1600000	        887445	 0.367
+
+Com semáforo	1	1600000	        1600000	 1.388
+
+Com semáforo	2	1600000	        1600000	 1.401
+
+Com semáforo	3	1600000	        1600000	 1.392
+
+
+
+Discussão:
+
+Duas threads leem o mesmo valor (ex: 100), as duas gravam 101, e um incremento some, por isso há perda de incremento
+
+
+
+Só uma thread por vez lê e grava o contador, então nenhuma lê um valor desatualizado. O semáforo resolve o problema.
+
+
+
+Throughput: com semáforo ficou quase 4 vezes mais lento, porque as threads esperam a vez. Perde velocidade, mas o resultado fica correto.
+
+
+
+Justiça: o Semaphore do Python não garante ordem de chegada (FIFO), mas isso não muda o resultado, porque todas as threads terminam.
+
+
+
+O acquire() e o release() funcionam como barreiras o que uma thread gravou antes do release() é visto pela próxima que fizer acquire(), garantindo visibilidade.
+
+
 
 # \## Parte 3 - Deadlock
 

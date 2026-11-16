@@ -32,9 +32,11 @@ Python 3.11
 
 
 
-!\[versao ingenua com deadlock](parte1-filosofos/evidencias/ingenua/deadlock.png)
+<img width="1704" height="441" alt="deadlock" src="https://github.com/user-attachments/assets/9a4ea163-8cd6-4e00-a2a5-9611d0b9204f" />
 
-!\[versao corrigida](parte1-filosofos/evidencias/corrigida/versaacorrigidaa.png)
+
+<img width="2162" height="1142" alt="versaacorrigidaa" src="https://github.com/user-attachments/assets/9b0c2699-b7d8-45b0-bcc7-e707691b4cd8" />
+
 
 
 
